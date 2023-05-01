@@ -6,8 +6,11 @@ block variables
 block main
   style.
     .container {
+      background-color: black;
       padding-top: 50px;
       padding-bottom: 50px;
+      min-height: 100vh;
+      color: white;
     }
 
     h1 {
@@ -16,7 +19,7 @@ block main
     }
 
     a {
-      color: rgb(10, 10, 175);
+      color: white;
     }
 
     li {
@@ -62,7 +65,7 @@ block main
 
   main
     .container
-      img(src="https://via.placeholder.com/300x150" width="300" alt="Логотип проекта")
+      img(src="./img/svg/logo.svg" width="300" alt="Логотип проекта")
       h1 Список страниц
       ol
         each page in pages
