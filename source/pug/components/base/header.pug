@@ -15,22 +15,20 @@ mixin header(headerMods, currentUrl)
       },
     ]
 
-  header.header(class=headerMods)
+  header.header-example(class=headerMods data-header)
     .container
       if(currentUrl === "index.html")
-        //- lighthouse снимает 10 баллов SEO за <a> без href
-        span.header__logo Логотип
+        span.header-example__logo Логотип
       else
-        a.header__logo(href="index.html", aria-label="Переход на главную") Логотип
-      nav.main-nav
-        button.main-nav__toggle.btn-reset(type="button", aria-label="Переключатель отображения меню", aria-pressed="false")
-          +icon("icon-burger", 20, 20)
-        .main-nav__wrapper
-          ul.main-nav__list
-            each link in headerLinks
+        a.header-example__logo(href="index.html", aria-label="Переход на главную") Логотип
+      nav.header-example__nav
+        ul.header-example__list
+          each link in headerLinks
               - const activeState = currentUrl === link.href
-              li.main-nav__item
+              li.header-example__item
                 if(activeState)
-                  span.main-nav__link.is-active=link.text
+                  span.header-example__link.is-active=link.text
                 else
-                  a.main-nav__link(href=link.href)=link.text
+                  a.header-example__link(href=link.href)=link.text
+      button.header-example__burger(type="button", aria-label="Переключатель отображения меню", aria-pressed="false", data-burger)
+        +icon("icon-burger", 20, 20)
