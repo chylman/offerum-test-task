@@ -42,6 +42,7 @@
     border: none;
 
     color: $color-bunker;
+    font-family: $ff-gt-walsheim;
     font-size: size(20px);
     line-height: size(26px);
 
@@ -83,6 +84,8 @@
     }
 
     @include active {
+      box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+
       &::before {
         filter: blur(8px);
       }
