@@ -7,11 +7,7 @@ mixin header(headerMods, currentUrl)
       },
       {
         href: "#",
-        text: "Страница 2"
-      },
-      {
-        href: "#",
-        text: "Страница 3"
+        text: "Что даст обучение"
       },
     ]
 
@@ -29,6 +25,6 @@ mixin header(headerMods, currentUrl)
                 if(activeState)
                   span.header-example__link.is-active=link.text
                 else
-                  a.header-example__link(href=link.href)=link.text
+                  a.header-example__link.link(href=link.href)=link.text
       button.header-example__burger(type="button", aria-label="Переключатель отображения меню", aria-pressed="false", data-burger)
         +icon("icon-burger", 20, 20)

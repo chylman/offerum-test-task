@@ -819,24 +819,11 @@ button,
     margin: 0 0 36px 0;
   }
 }
-.header-example__link {
-  font-size: 16px;
-  font-weight: 600;
-  line-height: 25px;
-  -webkit-transition: color 0.3s ease;
-  -o-transition: color 0.3s ease;
-  transition: color 0.3s ease;
-}
 @media (max-width: 1023px) {
   .header-example__link {
     color: #ffffff;
     font-size: 20px;
     line-height: 25px;
-  }
-}
-@media (hover: hover) {
-  .header-example__link:hover:not(.focus-visible):not(span) {
-    color: #2c39f2;
   }
 }
 .header-example__link--blue {
@@ -2055,6 +2042,27 @@ button,
 .page-content {
   margin-top: -5.3125rem;
   padding-top: 5.3125rem;
+}
+
+.link {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  cursor: pointer;
+  -webkit-transition: opacity 0.3s ease;
+  -o-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+}
+@media (hover: hover) {
+  .link:hover:not(.focus-visible) {
+    opacity: 0.7;
+  }
+}
+.link.focus-visible:focus {
+  opacity: 0.7;
+}
+.link.focus-visible:active {
+  opacity: 0.5;
 }
 
 /* @mixin hover-focus {

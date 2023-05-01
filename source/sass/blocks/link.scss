@@ -1,0 +1,16 @@
+.link {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+
+  cursor: pointer;
+  transition: opacity $trans-default;
+
+  @include hover-focus {
+    opacity: 0.7;
+  }
+
+  @include active {
+    opacity: 0.5;
+  }
+}

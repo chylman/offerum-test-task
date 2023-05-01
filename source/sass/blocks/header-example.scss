@@ -177,23 +177,10 @@
   }
 
   &__link {
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 25px;
-    transition: color 0.3s ease;
-
    @media (max-width: 1023px) {
       color: #ffffff;
       font-size: 20px;
       line-height: 25px;
-    }
-
-    @media (hover: hover) {
-      &:hover:not(.focus-visible) {
-        &:not(span) {
-          color: #2c39f2;
-        }
-      }
     }
 
     &--blue {
