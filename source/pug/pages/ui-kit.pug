@@ -7,6 +7,8 @@ block main
   style.
     main {
       margin-top: 100px;
+      background-color: black;
+      color: white;
     }
 
     main > .container {
@@ -142,14 +144,20 @@ block main
         p Пример вызова
         code
           pre +btn({text: "Текст", href: "#"})
-        +btn({text: "Текст", href: "#", isExternal: true})(aria-label="Просто ссылка").btn--red
-        p Пример вызова
-        code
-          pre +btn({text: "Я красная ссылка", href: "#", isExternal: true})(aria-label="Просто ссылка").btn--red
         +btn({text: "Текст"})(disabled)
         p Пример вызова
         code
           pre +btn({text: "Текст"})(disabled)
+        +btn({text: "Я кнопка с градиентом", href: "#", isExternal: true})(aria-label="Просто ссылка").btn--gradient-malachite-to-pear.btn--brd-rad-20.btn--padding-20-30
+        p Пример вызова
+        code
+          pre +btn({text: "Я кнопка с градиентом", href: "#", isExternal: true})(aria-label="Просто ссылка").btn--gradient-malachite-to-pear.btn--brd-rad-20.btn--padding-20-30
+        +btn({text: "Я кнопка с градиентом", isExternal: true})(aria-label="Просто ссылка" disabled).btn--gradient-malachite-to-pear.btn--brd-rad-20.btn--padding-20-30
+        p Пример вызова
+        code
+          pre +btn({text: "Я кнопка с градиентом", isExternal: true})(aria-label="Просто ссылка" disabled).btn--gradient-malachite-to-pear.btn--brd-rad-20.btn--padding-20-30
+
+
 
       section(id="form-elements")
         h2 Form elements

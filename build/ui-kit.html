@@ -14,6 +14,8 @@
       <style>
         main {
           margin-top: 100px;
+          background-color: black;
+          color: white;
         }
         
         main > .container {
@@ -135,23 +137,26 @@
           <section id="modals">
             <h2>Modals</h2>
             <p>
-              <button class="btn" type="button" data-open-modal="feedback">modal-feedback</button>
+              <button class="btn" type="button" data-open-modal="feedback"><span>modal-feedback</span></button>
             </p>
             <p>
-              <button class="btn" type="button" data-open-modal="success">modal-success</button>
+              <button class="btn" type="button" data-open-modal="success"><span>modal-success</span></button>
             </p>
           </section>
           <section id="buttons">
             <h2>Buttons</h2>
-            <a class="btn" href="#">Текст</a>
+            <a class="btn" href="#"><span>Текст</span></a>
             <p>Пример вызова</p><code>
               <pre>+btn({text: "Текст", href: "#"})</pre></code>
-            <a class="btn btn--red" href="#" target="_blank" rel="nofollow noopener noreferrer" aria-label="Просто ссылка">Текст</a>
-            <p>Пример вызова</p><code>
-              <pre>+btn({text: "Я красная ссылка", href: "#", isExternal: true})(aria-label="Просто ссылка").btn--red</pre></code>
-            <button class="btn" type="button" disabled>Текст</button>
+            <button class="btn" type="button" disabled><span>Текст</span></button>
             <p>Пример вызова</p><code>
               <pre>+btn({text: "Текст"})(disabled)</pre></code>
+            <a class="btn btn--gradient-malachite-to-pear btn--brd-rad-20 btn--padding-20-30" href="#" target="_blank" rel="nofollow noopener noreferrer" aria-label="Просто ссылка"><span>Я кнопка с градиентом</span></a>
+            <p>Пример вызова</p><code>
+              <pre>+btn({text: "Я кнопка с градиентом", href: "#", isExternal: true})(aria-label="Просто ссылка").btn--gradient-malachite-to-pear.btn--brd-rad-20.btn--padding-20-30</pre></code>
+            <button class="btn btn--gradient-malachite-to-pear btn--brd-rad-20 btn--padding-20-30" target="_blank" rel="nofollow noopener noreferrer" type="button" aria-label="Просто ссылка" disabled><span>Я кнопка с градиентом</span></button>
+            <p>Пример вызова</p><code>
+              <pre>+btn({text: "Я кнопка с градиентом", isExternal: true})(aria-label="Просто ссылка" disabled).btn--gradient-malachite-to-pear.btn--brd-rad-20.btn--padding-20-30</pre></code>
           </section>
           <section id="form-elements">
             <h2>Form elements</h2>
@@ -248,8 +253,8 @@
                   </ul>
                 </div>
                 <hr>
-                <button class="btn" type="reset">Сбросить форму</button>
-                <button class="btn" type="submit">Отправить форму</button>
+                <button class="btn" type="reset"><span>Сбросить форму</span></button>
+                <button class="btn" type="submit"><span>Отправить форму</span></button>
               </form>
             </div>
           </section>

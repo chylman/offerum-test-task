@@ -1,26 +1,99 @@
 .btn {
   display: inline-flex;
-  padding: 10px 20px;
+  padding: size(10px) size(20px);
 
   color: $color-default-white;
+  font-weight: 500;
+  font-size: size(16px);
+  line-height: size(19px);
 
-  background-color: $color-neon-blue;
-  border: none;
+  background-color: $color-transparent;
+  border: 1px solid $color-default-white;
+  border-radius: size(15px);
   cursor: pointer;
 
-  transition: opacity $trans-default;
+  transition: opacity $trans-default, color $trans-default, background $trans-default, border $trans-default;
 
-  &--red {
-    background-color: $color-torch-red;
+  &::before {
+    transition: filter $trans-default;
   }
 
   &:disabled {
-    opacity: 0.5;
-
     pointer-events: none;
   }
 
   @include hover-focus {
-    opacity: 0.8;
+    color: $color-pear;
+    border-color: $color-pear;
+
+  }
+
+  @include active {
+    color: $color-pear;
+    border-color: $color-pear;
+    background-color: rgba($color-reef, .05);
+    backdrop-filter: blur(7px);
+  }
+
+  &--gradient-malachite-to-pear {
+    position: relative;
+    background: $malachite-to-pear;
+    box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.25);
+    border: none;
+
+    color: $color-bunker;
+    font-size: size(20px);
+    line-height: size(26px);
+
+    &::before {
+      z-index: 0;
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+
+      width: 100%;
+      height: 100%;
+
+      background: $malachite-to-pear;
+      border-radius: inherit;
+      filter: blur(8px);
+    }
+
+    span {
+      position: relative;
+      z-index: 1;
+    }
+
+    &:disabled {
+      color: rgba($color-bunker, 0.5);
+
+      &::before {
+        display: none;
+      }
+    }
+
+    @include hover-focus {
+      color: $color-bunker;
+
+      &::before {
+        filter: blur(19.5px);
+      }
+    }
+
+    @include active {
+      &::before {
+        filter: blur(8px);
+      }
+    }
+  }
+
+  &--brd-rad-20 {
+    border-radius: size(20px);
+  }
+
+  &--padding-20-30 {
+    padding: size(20px) size(30px);
   }
 }
