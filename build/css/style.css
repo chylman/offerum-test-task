@@ -2052,6 +2052,11 @@ button,
   color: #ff0000;
 }
 
+.page-content {
+  margin-top: -5.3125rem;
+  padding-top: 5.3125rem;
+}
+
 /* @mixin hover-focus {
     @media (hover: hover) {
       &:hover:not(.focus-visible) {
