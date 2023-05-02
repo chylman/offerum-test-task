@@ -11,20 +11,26 @@ mixin header(headerMods, currentUrl)
       },
     ]
 
-  header.header-example(class=headerMods data-header)
+  header.header(class=headerMods data-header)
     .container
       if(currentUrl === "index.html")
-        span.header-example__logo Логотип
+        .header__logo
+          +img("svg", "logo", "svg", 128, 55, "Логотип компании NFT")
       else
-        a.header-example__logo(href="index.html", aria-label="Переход на главную") Логотип
-      nav.header-example__nav
-        ul.header-example__list
-          each link in headerLinks
-              - const activeState = currentUrl === link.href
-              li.header-example__item
-                if(activeState)
-                  span.header-example__link.is-active=link.text
-                else
-                  a.header-example__link.link(href=link.href)=link.text
-      button.header-example__burger(type="button", aria-label="Переключатель отображения меню", aria-pressed="false", data-burger)
-        +icon("icon-burger", 20, 20)
+        a.header__logo(href="index.html", aria-label="Переход на главную")
+          +img("svg", "logo", "svg", 128, 55, "Логотип компании NFT")
+      .header__overlay
+      .header__inner-wrapper
+        nav.header__nav
+          ul.header__list
+            each link in headerLinks
+                - const activeState = currentUrl === link.href
+                li.header__item
+                  if(activeState)
+                    span.header__link.is-active=link.text
+                  else
+                    a.header__link.link(href=link.href)=link.text
+        +btn({href: "#", text: "Личный кабинет"})
+      button.header__burger.burger(type="button", aria-label="Переключатель отображения меню", aria-pressed="false", data-burger)
+        span.burger__line
+        span.burger__line
