@@ -3,31 +3,15 @@
   z-index: 30;
   transition: transform 0.3s ease, background-color 0.3s ease;
 
+  @include vp-767 {
+    padding-top: size(24px);
+  }
+
   &--sticky {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-  }
-
-  &--base {
-    background-color: #ffffff;
-  }
-
-  &--blue {
-    background-color: #3c69ff;
-  }
-
-  &--red {
-    background-color: #f03838;
-  }
-
-  &--green {
-    background-color: #17ff45;
-  }
-
-  &--yellow {
-    background-color: #f4ff25;
   }
 
   &.is-hidden {
@@ -46,9 +30,11 @@
     margin: 0 size(40px) 0 0;
     display: flex;
 
-    @media (max-width: 1023px) {
+    @include vp-1023 {
       width: size(89px);
       height: size(37px);
+
+      transition: margin $trans-default;
     }
 
     img {
@@ -60,19 +46,9 @@
     .is-open & {
       position: relative;
       z-index: 25;
-    }
 
-    .logo__second-part {
-      @media (max-width: 1279px) {
-        margin: 0;
-      }
-
-     @media (max-width: 1023px) {
-        margin: 0 0 0 9px;
-      }
-
-      @media (max-width: 767px) {
-        margin: 0;
+      @include vp-1023 {
+        margin-left: size(20px);
       }
     }
   }
@@ -111,6 +87,8 @@
     @include vp-1023 {
       z-index: 20;
       flex-direction: column;
+      align-items: flex-start;
+      width: calc(100vw - #{size(16px)});
       opacity: 0;
       margin: 0;
       padding: size(115px) size(20px) size(60px) size(20px);
@@ -162,7 +140,7 @@
     color: $color-very-light-grey;
 
     @include vp-1023 {
-      align-items: flex-start;
+      width: 100%;
     }
   }
 
@@ -174,16 +152,11 @@
     margin: 0;
     padding: 0;
 
-   @media (max-width: 1023px) {
+   @include vp-1023 {
       flex-direction: column;
       align-items: flex-start;
       margin: 0 0 size(90px) 0;
       max-width: unset;
-    }
-
-    @media (max-width: 767px) {
-      align-items: flex-start;
-      margin: 0 0 62px 0;
     }
   }
 
@@ -197,16 +170,8 @@
     &:not(:last-child) {
       margin: 0 size(105px) 0 0;
 
-      @media (max-width: 1279px) {
-        margin: 0 35px 0 0;
-      }
-
-    @media (max-width: 1023px) {
-        margin: 0 0 40px 0;
-      }
-
-      @media (max-width: 767px) {
-        margin: 0 0 36px 0;
+      @include vp-1023 {
+        margin: 0 0 size(19px) 0;
       }
     }
   }
@@ -243,35 +208,6 @@
         pointer-events: all;
         transition: opacity 0.3s ease 0.2s;
       }
-    }
-  }
-
-  &__burger-text {
-    transition: opacity 0.3s ease 0.1s;
-    cursor: pointer;
-
-    .is-open & {
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.3s ease 0s;
-    }
-  }
-
-  &__burger-icon {
-    stroke: #ffffff;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    pointer-events: none;
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    cursor: pointer;
-
-    .is-open & {
-      opacity: 1;
-      pointer-events: all;
-      transition: opacity 0.3s ease 0.2s;
     }
   }
 }

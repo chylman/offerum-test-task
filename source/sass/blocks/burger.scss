@@ -7,16 +7,16 @@
   cursor: pointer;
 
   .is-open & {
-    width: size(22px);
-    height: size(22px);
-    transform: translateX(size(-10px));
+    width: size(30px);
+    height: size(30px);
+    transform: translateX(size(-21px));
 
     .burger__line:first-child {
-      transform: rotate(45deg) translateX(size(13.5px));
+      transform: rotate(45deg) translateX(size(19px));
     }
 
     .burger__line:last-child {
-      transform: rotate(-45deg) translateX(size(13.5px));
+      transform: rotate(-45deg) translateX(size(19px));
     }
   }
 }
